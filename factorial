@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+
+void findFactorial(int num, int *fact);
+
+int main()
+{
+    int num;
+    int fact = 1;
+    int *ptr = &fact;
+
+    cout << "Enter a number: ";
+    cin >> num;
+
+    findFactorial(num, ptr);
+
+    cout << "Factorial of " << num << " is: " << *ptr << endl;
+
+    return 0;
+}
+
+void findFactorial(int num, int *fact)
+{
+    for (int i = 1; i <= num; i++)
+    {
+        *fact *= i;
+    }
+}
